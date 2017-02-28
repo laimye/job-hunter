@@ -13,9 +13,11 @@ passport.use(new GoogleStrategy({
       if (user) {
         return cb(null, user);
       } else {
+        console.log(profile)
         var newUser = new User({
           name: profile.displayName,
           email: profile.emails[0].value,
+          profileImage: profile.photos[0].value,
           googleId: profile.id
         });
         newUser.save(function(err) {

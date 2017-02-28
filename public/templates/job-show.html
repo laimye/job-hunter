@@ -1,0 +1,16 @@
+<h1>{{showCtrl.job.company}}</h1>
+<h3>{{showCtrl.job.position}}&nbsp;&nbsp;<a href="{{showCtrl.job.description}}" target="_blank" class="glyphicon glyphicon-eye-open" id="job-show"></a></h3>
+
+<hr>
+
+<p>
+	{{showCtrl.job.appliedOn | date: "fullDate"}}<br>
+	{{showCtrl.job.interestLevel}}<br>
+	{{showCtrl.job.status}}<br>
+	<!-- {{showCtrl.job.description}}<br> -->
+	{{showCtrl.job.source}}<br>
+	{{showCtrl.job.resumeVersion}}<br>
+	{{showCtrl.job.followUp}}<br>
+	{{showCtrl.job.comments | date: "fullDate"}}
+	{{showCtrl.job.nextSteps}}<br>
+</p>

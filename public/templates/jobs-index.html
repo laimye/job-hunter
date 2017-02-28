@@ -1,0 +1,18 @@
+<h1>All Jobs</h1>
+
+
+<div class="row">
+  <div class="col-sm-4 col-md-3" ng-repeat="job in allCtrl.jobs track by $index">
+    <div class="thumbnail hovereffect">
+      <div class="caption">
+        <h3><a ui-sref="showJob({jobId: job._id})">{{job.company}}</a></h3>
+        <p class="text-muted" id="position-index">{{job.position}}</p>
+        <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+      </div>
+      <div class="panel-footer {{job.status}}">
+      	<p>Applied: {{job.appliedOn | date: "shortDate"}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
