@@ -14,6 +14,9 @@ function runBlock ($rootScope, $state) {
 	  if (toState.loginRequired && !$rootScope.user) {
 	    evt.preventDefault();
 	    $state.go('login');
+	  } else {
+	  	$rootScope.bgStyle = toState.bgStyle;
+	  	$rootScope.navStyle = toState.navStyle;
 	  }
 	});
 }
@@ -46,11 +49,21 @@ function configRoutes($stateProvider, $urlRouterProvider) {
 	  	templateUrl: 'templates/job-show.html',
 	  	controller: 'ShowJobController as showCtrl',
 	  	loginRequired: true
+	  	// bgStyle: 'background: lightgrey'
+	  })
+
+	  .state('editJob', {
+	  	url: '/edit/:jobId',
+	  	templateUrl: 'templates/job-edit.html',
+	  	controller: 'EditJobController as editCtrl',
+	  	loginRequired: true
 	  })
 
 	  .state('login', {
 	  	url: '/login',
-	  	templateUrl: 'templates/landing-page.html'
+	  	templateUrl: 'templates/landing-page.html',
+	  	bgStyle: "background-image: url('http://i.imgur.com/fhKoWfZ.jpg');background-size: cover; background-repeat: no-repeat; background-attachment: fixed;",
+	  	navStyle: "color: white"
 	  })
 
 }

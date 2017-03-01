@@ -1,18 +1,42 @@
-<h1>All Jobs</h1>
+<div class=jumbotron>
+	<div class="col-xs-4">
+	  <label>Company</label>
+	  <select class="form-control" ng-model="allCtrl.selectedCompany" ng-options="company for company in allCtrl.companies">
+	  	<option value="">All</option>
+	  </select>
+	</div>
+	<div class="col-xs-4">
+	  <label>Search</label>
+	  <input type="search" class="form-control" ng-model="allCtrl.search" placeholder="search...">
+	</div>
+	<div class="col-xs-4">
+	  <label>Sort By</label>
+	    <select class="form-control" name="status" ng-model="allCtrl.sortBy">
+		    <option value="">Select</option>
+	      <option ng-click="allCtrl.sortBy = 'company'" value="company">Company</option>
+	      <option ng-click="allCtrl.sortBy = 'position'" value="position">Position</option>
+	      <option ng-click="allCtrl.sortBy = 'applied'" value="appliedOn">Applied</option>
+	      <option ng-click="allCtrl.sortBy = 'status'" value="status">Status</option>
+	    </select>
+	</div><br><br>
+</div>
 
 
 <div class="row">
-  <div class="col-sm-4 col-md-3" ng-repeat="job in allCtrl.jobs track by $index">
-    <div class="thumbnail hovereffect">
+  <div class="col-sm-4 col-md-3" ng-repeat="job in allCtrl.jobs | filter:allCtrl.search | filter:{company:allCtrl.selectedCompany||undefined} | orderBy:allCtrl.sortBy track by $index">
+    <div class="thumbnail">
       <div class="caption">
-        <h3><a ui-sref="showJob({jobId: job._id})">{{job.company}}</a></h3>
+        <h3><a ui-sref="showJob({jobId: job._id})">{{job.company}}</a>&nbsp;&nbsp;<a ng-click="allCtrl.deleteJob(job)" class="glyphicon glyphicon-trash"></a></h3>
         <p class="text-muted" id="position-index">{{job.position}}</p>
         <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
       </div>
-      <div class="panel-footer {{job.status}}">
+      <div class="panel-footer text-muted" id="{{job.status}}">
       	<p>Applied: {{job.appliedOn | date: "shortDate"}}</p>
       </div>
     </div>
   </div>
 </div>
 
+<p class="text-muted">Total Jobs Applied: {{allCtrl.jobs.length}}</p>
+
+<!-- <button ng-click="allCtrl.checkEmail()">check email</button> -->

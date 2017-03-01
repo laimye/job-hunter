@@ -1,10 +1,49 @@
 body {
-  padding: 50px;
+  padding: 60px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+#delete-comment {
+	font-size: 13px;
+	color: #1b85b8;
+}
+
+#logo-img {
+	height: 40px;
+	padding-top: 10px;
+}
+
+#log-out {
+	padding-top: 11px;
+}
+
+#app-name {
+	color: white;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: 30px;
+	padding-top: 260px;
+}
+
+#app-name hr {
+	width: 500px;
+}
+
+/*#app-name img {
+	height: 150px;
+	padding-top: 20px;
+}*/
+
+.navbar {
+	background: rgba(255, 255, 255, 0.3);
+}
+
+#profile-logo {
+	width: 30px;
 }
 
 #position-index {
@@ -24,24 +63,39 @@ div.caption {
 	text-align: center;
 }
 
-div.panel-footer.Rejected {
+#Rejected {
 	background-color: #ff7373;
 }
 
-div.panel-footer.Applied {
+#Applied {
 	background-color: #c6c6c6;
 }
 
-div.panel-footer.Pending {
+#Pending {
 	background-color: #fef56f;
 }
 
-div.panel-footer.Interview {
+#Interview {
 	background-color: #badfef;
 }
 
-div.panel-footer.Offer {
+#Offer {
 	background-color: #1b85b8;
+	color: white;
+}
+
+#High {
+	background-color: #6DC35B;
+	color: white;
+}
+
+#Medium {
+	background-color: #fef56f;
+	color: white;
+}
+
+#Low {
+	background-color: #D1B9F1;
 	color: white;
 }
 
@@ -52,4 +106,8 @@ div.panel-footer.Offer {
 #job-show {
 	color: #1877a5;
 	font-size: 18px;
+}
+
+.glyphicon {
+	font-size: 20px;
 }

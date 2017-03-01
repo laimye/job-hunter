@@ -1,16 +1,52 @@
-<h1>{{showCtrl.job.company}}</h1>
-<h3>{{showCtrl.job.position}}&nbsp;&nbsp;<a href="{{showCtrl.job.description}}" target="_blank" class="glyphicon glyphicon-eye-open" id="job-show"></a></h3>
+<div class="row">
+	<div class="col-md-6">
+		<h1>{{showCtrl.job.company}}&nbsp;&nbsp;<a ui-sref="editJob({jobId: showCtrl.job._id})" class="glyphicon glyphicon-pencil"></a></h1>
+		<h3>{{showCtrl.job.position}}&nbsp;&nbsp;<a href="{{showCtrl.job.description}}" target="_blank" class="glyphicon glyphicon-eye-open" id="job-show"></a></h3><br>
+		<p><strong>Applied On: </strong>{{showCtrl.job.appliedOn | date: "fullDate"}}<p>
+	</div>
+	<div class="col-md-6">
+		<br><br><span class="btn" id="{{showCtrl.job.status}}"></span>&nbsp;<strong>Current Status: </strong>{{showCtrl.job.status}}<br><br>
+		<span class="btn" id="{{showCtrl.job.interestLevel}}"></span>&nbsp;<strong>Interest Level: </strong>{{showCtrl.job.interestLevel}}<br>
+	
+	</div>
+
+</div>
+
 
 <hr>
 
 <p>
-	{{showCtrl.job.appliedOn | date: "fullDate"}}<br>
-	{{showCtrl.job.interestLevel}}<br>
-	{{showCtrl.job.status}}<br>
-	<!-- {{showCtrl.job.description}}<br> -->
-	{{showCtrl.job.source}}<br>
-	{{showCtrl.job.resumeVersion}}<br>
-	{{showCtrl.job.followUp}}<br>
-	{{showCtrl.job.comments | date: "fullDate"}}
-	{{showCtrl.job.nextSteps}}<br>
+	Job Source: {{showCtrl.job.source}}<br>
+	Location: {{showCtrl.job.location}}<br>
+	Resume Version: {{showCtrl.job.resumeVersion}}<br>
+	Follow Up: {{showCtrl.job.followUp | date: "fullDate"}}<br>
+
+
+	<h2 class="text-muted">Next Steps</h2>
+
+	<form ng-submit="showCtrl.addStep()">
+		<div class="form-group">
+	    <input ng-model="showCtrl.step" autocomplete="off" type="textarea" class="form-control" placeholder="What's next?">
+	  </div>
+	  <button class="btn btn-default" type="submit">Add Next Step</button>
+  </form><br>
+  <div class="panel" ng-repeat="step in showCtrl.job.steps | orderBy:'createdAt':true track by $index">
+    <div class="panel-body"><strong>{{step.content}}&nbsp;&nbsp;</strong><span ng-click="showCtrl.deleteStep(step)" class="glyphicon glyphicon-trash" id="delete-comment"></span></div>
+  </div>
+
+
+	<h2 class="text-muted">Comments</h2>
+
+	<form ng-submit="showCtrl.addComment()">
+		<div class="form-group">
+	    <input ng-model="showCtrl.comment" autocomplete="off" type="textarea" class="form-control" placeholder="comment">
+	  </div>
+	  <button class="btn btn-default" type="submit">Add Comment</button>
+  </form><br>
+
+	<div class="panel" ng-repeat="comment in showCtrl.job.comments | orderBy:'createdAt':true track by $index">
+	  <div class="panel-header">&nbsp;&nbsp;{{comment.createdAt | date: "mediumDate"}}&nbsp;&nbsp;<span ng-click="showCtrl.deleteComment(comment)" class="glyphicon glyphicon-trash" id="delete-comment"></span></div>
+	  <div class="panel-body"><strong>{{comment.content}}</strong></div>
+	</div>
+
 </p>

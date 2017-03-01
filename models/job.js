@@ -1,12 +1,30 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var emailSchema = new Schema({
+	received: Date,
+	body: String
+});
+
 var contactSchema = new Schema({
 	name: String,
 	title: String,
 	email: String,
-	phone: String
-})
+	phone: String,
+	emails: [emailSchema]
+});
+
+var commentSchema = new Schema({
+	content: String,
+	commenter: {type: Schema.Types.ObjectId, ref: 'User'},
+	createdAt: {type: Date, default: Date.now}
+});
+
+var stepSchema = new Schema({
+	content: String,
+	createdAt: {type: Date, default: Date.now},
+	due: {type: Date, default: Date.now}
+});
 
 var jobSchema = new Schema({
 	company: {
@@ -26,20 +44,19 @@ var jobSchema = new Schema({
 	interestLevel: {
 		type: String,
 		enum: ['High', 'Medium', 'Low']
-		// default: 'Medium'
 	},
 	status: {
 		type: String,
 		enum: ['Rejected', 'Pending', 'Interview', 'Applied', 'Offer']
-		// default: 'Applied'
 	},
+	location: String,
 	source: String,
 	resumeVersion: String,
 	followUp: {
 		type: Date		// default: function() { return Date.now() + (7 * 1000 * 60 * 60 * 24) }
 	},
-	nextSteps: String,
-	comments: String,
+	steps: [stepSchema],
+	comments: [commentSchema],
 	contacts: [contactSchema],
 	applicant: {type: Schema.Types.ObjectId, ref: 'User'}
 });

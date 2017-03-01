@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+mongoose.Promise = Promise;
 
 var db = mongoose.connect(process.env.DATABASE_URL);
 

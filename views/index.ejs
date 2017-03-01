@@ -4,24 +4,32 @@
     <title>JOBHUNTER</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
   </head>
-  <body>
+  <body style="{{bgStyle}}">
     <!-- Nav bar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar navbar-fixed-top">
       <div class="container-fluid">
-        <ul class="nav navbar-nav navbar-right">
           <% if (user) { %>
-            <li><a ui-sref="home" ui-sref-active="active">MY JOBS</a></li>
-            <li><a ui-sref="newJob" ui-sref-active="active">ADD JOB</a></li>
-            <li><a href="/logout">LOG OUT <img src="user.profileImage>"></a></li>
+            <div class="navbar-header">
+              <div id="logo-div nav navnavbar-left">
+               <a ui-sref="home"><img src="http://i.imgur.com/dpoLbUG.png" id="logo-img"></a>
+              </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a ui-sref="home" ui-sref-active="active">MY JOBS</a></li>
+              <li><a ui-sref="newJob" ui-sref-active="active">ADD JOB</a></li>
+              <li><a href="/logout" id="log-out">LOG OUT &nbsp;&nbsp;<img src="<%= user.profileImage %>" id="profile-logo"></a></li>
+            </ul>
           <% } else { %>
-            <li><a href="/auth/google">SIGN IN WITH <img src="http://i.imgur.com/jWMLUYc.png" style="width:25px;height:25px"></a></li>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/auth/google" style="{{navStyle}}">SIGN IN WITH <img src="http://i.imgur.com/jWMLUYc.png" style="width:25px;height:25px"></a></li>
+            </ul>
           <% } %>
-        </ul>
       </div>
     </nav>
 
@@ -40,11 +48,12 @@
       <% } %>
     </script>
 
-   <script src="/javascripts/app.js"></script>
-   <script src="/javascripts/services/job-resource.js"></script>
-   <script src="/javascripts/controllers/add-job-controller.js"></script>
-   <script src="/javascripts/controllers/all-jobs-controller.js"></script>
-   <script src="/javascripts/controllers/show-job-controller.js"></script>
-
+  <script src="/javascripts/app.js"></script>
+  <script src="/javascripts/services/job-resource.js"></script>
+  <script src="/javascripts/controllers/add-job-controller.js"></script>
+  <script src="/javascripts/controllers/all-jobs-controller.js"></script>
+  <script src="/javascripts/controllers/show-job-controller.js"></script>
+  <script src="/javascripts/controllers/edit-job-controller.js"></script>
+   
   </body>
 </html>

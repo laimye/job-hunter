@@ -9,7 +9,8 @@ var userSchema = new Schema({
 	},
 	email: String,
 	googleId: String,
-	profileImage: String
+	profileImage: String,
+	googleToken: String
 });
 
 module.exports = mongoose.model('User', userSchema);
