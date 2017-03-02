@@ -28,7 +28,8 @@ function JobsService($resource) {
 				method: 'POST',
 				url: '/api/jobs/:jobId/steps',
 				params: {jobId: '@jobId'},
-				text: ':text'
+				text: ':text',
+				due: ':due'
 			},
 			deleteStep: {
 				method: 'DELETE',

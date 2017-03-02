@@ -17,8 +17,8 @@ router.get('/', function(req, res) {
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
   'google',
-  { scope: ['profile', 'email'] }
-  // { scope: ['profile', 'email', 'https://www.googleapis.com/auth/gmail.readonly'] }
+  // { scope: ['profile', 'email'] }
+  { scope: ['profile', 'email', 'https://www.googleapis.com/auth/gmail.readonly'] }
 ));
 
 // Google OAuth callback route

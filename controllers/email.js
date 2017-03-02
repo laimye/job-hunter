@@ -10,7 +10,7 @@ module.exports = {
 function checkEmail(req, res) {
 	var gmail = google.gmail('v1');
 	gmail.users.labels.list({
-	    auth: req.user.googleToken,
+	    auth: JSON.parse(req.user.googleToken),
 	    userId: 'me',
 	  }, function(err, response) {
 	    if (err) {

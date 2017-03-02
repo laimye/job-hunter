@@ -1,6 +1,7 @@
 body {
   padding: 60px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  font-family: 'Raleway', sans-serif;
 }
 
 a {
@@ -51,8 +52,9 @@ a {
 }
 
 ul.navbar-nav a.active {
-	background-color: white;
+	/*background-color: white;*/
 	color: black;
+	font-weight: bold;
 }
 
 div.thumbnail {
@@ -65,10 +67,12 @@ div.caption {
 
 #Rejected {
 	background-color: #ff7373;
+	color: white;
 }
 
 #Applied {
 	background-color: #c6c6c6;
+	color: white;
 }
 
 #Pending {
@@ -80,7 +84,7 @@ div.caption {
 }
 
 #Offer {
-	background-color: #1b85b8;
+	background-color: #5cb560;
 	color: white;
 }
 

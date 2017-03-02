@@ -15,6 +15,6 @@ router.delete('/comments/:id', jobsController.deleteComment);
 router.post('/jobs/:id/steps', jobsController.addStep);
 router.delete('/steps/:id', jobsController.deleteStep);
 
-// router.get('/email', emailController.checkEmail);
+router.get('/email', emailController.checkEmail);
 
 module.exports = router;

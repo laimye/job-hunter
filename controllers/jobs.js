@@ -71,9 +71,10 @@ function deleteComment(req, res) {
 }
 
 function addStep(req, res) {
+	console.log(req.body);
 	Job.findById(req.params.id)
 	.then(job => {
-		job.steps.push({content: req.body.text});
+		job.steps.push({content: req.body.text, due: new Date(req.body.due)});
 		return job.save();
 	})
 	.then(job => {

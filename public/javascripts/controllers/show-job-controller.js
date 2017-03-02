@@ -25,9 +25,10 @@ function ShowJobController(Job, $stateParams) {
 	};
 
 	vm.addStep = function() {
-		Job.addStep({jobId: $stateParams.jobId, text: vm.step}, function(job) {
+		Job.addStep({jobId: $stateParams.jobId, text: vm.step.content, due: vm.step.due}, 
+			function(job) {
 			vm.job = job;
-			vm.step = '';
+			vm.step = {};
 		});
 	}
 

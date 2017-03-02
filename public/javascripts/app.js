@@ -49,7 +49,6 @@ function configRoutes($stateProvider, $urlRouterProvider) {
 	  	templateUrl: 'templates/job-show.html',
 	  	controller: 'ShowJobController as showCtrl',
 	  	loginRequired: true
-	  	// bgStyle: 'background: lightgrey'
 	  })
 
 	  .state('editJob', {

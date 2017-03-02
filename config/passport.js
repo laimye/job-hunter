@@ -11,17 +11,23 @@ passport.use(new GoogleStrategy({
     User.findOne({ 'googleId': profile.id }, function(err, user) {
       if (err) return cb(err);
       if (user) {
-        // user.googleToken = accessToken;
-        // user.save(function() {
+        user.googleToken = JSON.stringify({
+          access_token: accessToken,
+          refresh_token: refreshToken
+        });
+        user.save(function() {
           return cb(null, user);
-        // });
+        });
       } else {
         var newUser = new User({
           name: profile.displayName,
           email: profile.emails[0].value,
           profileImage: profile.photos[0].value,
           googleId: profile.id,
-          // googleToken: accessToken
+          googleToken: JSON.stringify({
+            access_token: accessToken,
+            refresh_token: refreshToken
+          })
         });
         newUser.save(function(err) {
           if (err) return cb(err);
