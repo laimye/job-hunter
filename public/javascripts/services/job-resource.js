@@ -37,9 +37,7 @@ function JobsService($resource) {
 				params: {stepId: '@stepId'}
 			}
 		}
-
 	);	
-
 }
 
 

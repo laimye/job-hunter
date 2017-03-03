@@ -33,14 +33,7 @@ function AllJobsController(Job, $http) {
 			console.log(res.data)
 		})
 	}
-
 }
-
-
-
-
-
-
 
 
 })();

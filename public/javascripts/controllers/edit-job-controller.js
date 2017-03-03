@@ -6,7 +6,6 @@ angular.module('app')
 
 EditJobController.$inject = ['Job', '$stateParams', '$state'];
 
-
 function EditJobController(Job, $stateParams, $state) {
 	var vm = this;
 
@@ -20,11 +19,7 @@ function EditJobController(Job, $stateParams, $state) {
 		vm.job.$update();
 		$state.go('showJob', {jobId: $stateParams.jobId})
 	}
-
 }
-
-
-
 
 
 })();

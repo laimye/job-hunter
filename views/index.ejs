@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="app">
   <head>
-    <title>JOBHUNTER</title>
+    <title>Business | Casual</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -42,18 +42,18 @@
 
   <div ui-view></div>
 
-    <script>
-      <% if(user) { %>
-        var loggedInUser = {
-          name: "<%= user.name %>",
-          email: "<%= user.email %>",
-          avatar: "<%= user.profileImage %>"
-        }
-        window.location.hash = '#!/home';
-      <% } else { %>
-        var loggedInUser = null;
-      <% } %>
-    </script>
+  <script>
+    <% if(user) { %>
+      var loggedInUser = {
+        name: "<%= user.name %>",
+        email: "<%= user.email %>",
+        avatar: "<%= user.profileImage %>"
+      }
+      window.location.hash = '#!/home';
+    <% } else { %>
+      var loggedInUser = null;
+    <% } %>
+  </script>
 
   <script src="/javascripts/app.js"></script>
   <script src="/javascripts/services/job-resource.js"></script>

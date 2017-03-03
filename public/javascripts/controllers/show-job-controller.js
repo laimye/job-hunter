@@ -6,7 +6,6 @@ angular.module('app')
 
 ShowJobController.$inject = ['Job', '$stateParams'];
 
-
 function ShowJobController(Job, $stateParams) {
 	var vm = this;
 	vm.job = Job.get({id: $stateParams.jobId});
@@ -37,8 +36,6 @@ function ShowJobController(Job, $stateParams) {
 			vm.job = job;
 		});
 	};
-
 }
-
 
 })();

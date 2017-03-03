@@ -53,7 +53,7 @@ var jobSchema = new Schema({
 	source: String,
 	resumeVersion: String,
 	followUp: {
-		type: Date		// default: function() { return Date.now() + (7 * 1000 * 60 * 60 * 24) }
+		type: Date
 	},
 	steps: [stepSchema],
 	comments: [commentSchema],

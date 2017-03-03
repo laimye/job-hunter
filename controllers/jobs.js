@@ -48,7 +48,6 @@ function addComment(req, res) {
 	Job.findById(req.params.id)
 	.then(job => {
 		job.comments.push({
-			//req.body.text - if just a string - no an object
 			content: req.body.text,
 			commenter: req.user._id
 		});
