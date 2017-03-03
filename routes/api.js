@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var jobsController = require('../controllers/jobs');
-var emailController = require('../controllers/email');
-
 
 /* All /api routes */
 router.get('/jobs', jobsController.getAll);
@@ -14,7 +12,5 @@ router.post('/jobs/:id/comments', jobsController.addComment);
 router.delete('/comments/:id', jobsController.deleteComment);
 router.post('/jobs/:id/steps', jobsController.addStep);
 router.delete('/steps/:id', jobsController.deleteStep);
-
-router.get('/email', emailController.checkEmail);
 
 module.exports = router;
