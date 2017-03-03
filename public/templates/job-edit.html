@@ -4,56 +4,58 @@
 
 <div class="row">
   <form ng-submit="editCtrl.updateJob()">
-    <div class="form-group">
-      <label for="new-job">Company Name</label>
-      <input ng-model="editCtrl.job.company" autocomplete="off" type="text" class="form-control" required>
+    <div class="col-md-5 col-xs-6">
+      <div class="form-group">
+        <label for="new-job">Company Name</label>
+        <input ng-model="editCtrl.job.company" autocomplete="off" type="text" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="new-job">Position</label>
+        <input ng-model="editCtrl.job.position" autocomplete="off" type="text" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="new-job">Applied On</label>
+        <input ng-model="editCtrl.job.appliedOn" autocomplete="off" type="date" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="new-job">Link to Description</label>
+        <input ng-model="editCtrl.job.description" autocomplete="off" type="text" class="form-control">
+      </div>
+      <button class="btn btn-default" type="submit">Update Job</button>
     </div>
-    <div class="form-group">
-      <label for="new-job">Position</label>
-      <input ng-model="editCtrl.job.position" autocomplete="off" type="text" class="form-control" required>
+    <div class="col-md-5 col-md-offset-2 col-xs-6">
+     <div class="form-group">
+        <label for="new-job">Location</label>
+        <input ng-model="editCtrl.job.location" autocomplete="off" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="new-job">Resume Version</label>
+        <input ng-model="editCtrl.job.resumeVersion" autocomplete="off" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="new-job">Source</label>
+        <input ng-model="editCtrl.job.source" autocomplete="off" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="new-job">Follow Up</label>
+        <input ng-model="editCtrl.job.followUp" autocomplete="off" type="date" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="new-job">Interest Level</label>
+        <select name="status" ng-model="editCtrl.job.interestLevel">
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+          <option value="Low">Low</option>
+        </select>&nbsp;&nbsp;&nbsp;
+        <label for="new-job">Status</label>
+        <select name="status" ng-model="editCtrl.job.status">
+          <option value="Applied">Applied</option>
+          <option value="Rejected">Rejected</option>
+          <option value="Pending">Pending</option>
+          <option value="Interview">Interview</option>
+          <option value="Offer">Offer</option>
+        </select>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="new-job">Applied On</label>
-      <input ng-model="editCtrl.job.appliedOn" autocomplete="off" type="date" class="form-control" required>
-    </div>
-    <div class="form-group">
-      <label for="new-job">Link to Description</label>
-      <input ng-model="editCtrl.job.description" autocomplete="off" type="text" class="form-control">
-    </div>
-   <div class="form-group">
-      <label for="new-job">Location</label>
-      <input ng-model="editCtrl.job.location" autocomplete="off" type="text" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="new-job">Resume Version</label>
-      <input ng-model="editCtrl.job.resumeVersion" autocomplete="off" type="text" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="new-job">Source</label>
-      <input ng-model="editCtrl.job.source" autocomplete="off" type="text" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="new-job">Follow Up</label>
-      <input ng-model="editCtrl.job.followUp" autocomplete="off" type="date" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="new-job">Interest Level</label>
-      <select name="status" ng-model="editCtrl.job.interestLevel">
-        <option value="Medium">Medium</option>
-        <option value="High">High</option>
-        <option value="Low">Low</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="new-job">Status</label>
-      <select name="status" ng-model="editCtrl.job.status">
-        <option value="Applied">Applied</option>
-        <option value="Rejected">Rejected</option>
-        <option value="Pending">Pending</option>
-        <option value="Interview">Interview</option>
-        <option value="Offer">Offer</option>
-      </select>
-    </div>
-    <button class="btn btn-default" type="submit">Update Job</button>
   </form>
 </div>

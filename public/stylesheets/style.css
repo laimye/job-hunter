@@ -1,11 +1,146 @@
 body {
   padding: 60px;
-  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
   font-family: 'Raleway', sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+#about-dev {
+	margin-top: 500px;
+	width: 1440px;
+	margin-left: -60px;
+	text-align: center;
+	color: #cff8fc;
+	background-color: rgba(0,0,0,0.5);
+	margin-bottom: -100px;
+}
+
+.navbar-brand {
+	padding-top: 0;
+	padding-bottom: 7px;
+}
+
+#jumbotron-index {
+	margin-top: 15px;
+}
+
+#about-dev h3 {	
+	letter-spacing: 15px;
+}
+
+#about-dev p {	
+	letter-spacing: 1px;
+	line-height: 30px;
+}
+
+#about-dev a.glyphicon {
+	color: white;
+	font-size: 30px;
+	text-decoration: none;
+}
+
+#about-dev hr {
+	width: 400px;
+	color: #b7bcbc;
+}
+
+div.thumbnail {
+  height: 150px;
+  width: 200px;
+  background: #f7f7f7; /* For browsers that do not support gradients */    
+  background: -webkit-radial-gradient(white, #f9f9f4, #e2e0d0); /* Safari 5.1 to 6.0 */
+  background: -o-radial-gradient(white, #f9f9f4, #e2e0d0); /* For Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(white, #f9f9f4, #e2e0d0); /* For Firefox 3.6 to 15 */
+  background: radial-gradient(white, #f9f9f4, #e2e0d0); /* Standard syntax (must be last) */
+  height: 147px;
+  width: 222px;
+}
+
+.hovereffect {
+width: 220px;
+height: 200px;
+float:l eft;
+overflow: hidden;
+position: relative;
+text-align: center;
+cursor: default;
+}
+
+.hovereffect .overlay {
+width: 206px;
+height: 147px;
+position: absolute;
+overflow: hidden;
+top: 0;
+left: 15px;
+opacity: 0;
+background-color: rgba(143,223,239,1);
+border: 10px solid #a9e5f2;
+-webkit-transition: all .4s ease-in-out;
+transition: all .4s ease-in-out
+}
+
+.hovereffect p.hover-company {
+color: white;
+text-align: left;
+position: relative;
+font-size: 22px;
+padding-left: 7px;
+}
+
+.hovereffect a {
+text-decoration: none;
+display: inline-block;
+text-transform: uppercase;
+color: white;
+font-size: 23px;
+padding-bottom: 10px;
+}
+
+.hovereffect p.hover-position {
+color: white;
+text-align: right;
+position:relative;
+font-size:15px;
+padding-right: 7px;
+margin-top: -7px;
+}
+
+.hovereffect p.hover-followUp {
+color: #047c79;
+text-align: left;
+position:relative;
+font-size:13px;
+padding-top:5px;
+padding-left: 7px;
+}
+
+.hovereffect:hover .overlay {
+opacity:1;
+filter:alpha(opacity=100);
+}
+
+div.panel-footer {
+	height: 40px;
+}
+
+.profile-image-cropper {
+ width: 40px;
+ height: 40px;
+ overflow: hidden;
+ border-radius: 50%;
+ object-fit: cover;
+}
+
+.profile-image-cropper img {
+ vertical-align: middle;
+ height: 100%;
+ min-width: 100%;
+ left: 50%;
+ position: relative;
+ transform: translateX(-50%);
 }
 
 #delete-comment {
@@ -14,12 +149,12 @@ a {
 }
 
 #logo-img {
-	height: 40px;
+	height: 50px;
 	padding-top: 10px;
 }
 
 #log-out {
-	padding-top: 11px;
+	padding-top: 6px;
 }
 
 #app-name {
@@ -34,13 +169,9 @@ a {
 	width: 500px;
 }
 
-/*#app-name img {
-	height: 150px;
-	padding-top: 20px;
-}*/
-
 .navbar {
-	background: rgba(255, 255, 255, 0.3);
+	background: white;
+	color: black;
 }
 
 #profile-logo {
@@ -48,11 +179,10 @@ a {
 }
 
 #position-index {
-	font-size: 18px;
+	font-size: 15px;
 }
 
 ul.navbar-nav a.active {
-	/*background-color: white;*/
 	color: black;
 	font-weight: bold;
 }
@@ -63,6 +193,10 @@ div.thumbnail {
 
 div.caption {
 	text-align: center;
+}
+
+div.caption h3 {
+	color: #1877a5;
 }
 
 #Rejected {
@@ -110,6 +244,11 @@ div.caption {
 #job-show {
 	color: #1877a5;
 	font-size: 18px;
+}
+
+h4.show-props {
+	color: #1877a5;
+	font-size: 20px;
 }
 
 .glyphicon {

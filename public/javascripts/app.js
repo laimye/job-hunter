@@ -62,7 +62,7 @@ function configRoutes($stateProvider, $urlRouterProvider) {
 	  	url: '/login',
 	  	templateUrl: 'templates/landing-page.html',
 	  	bgStyle: "background-image: url('http://i.imgur.com/fhKoWfZ.jpg');background-size: cover; background-repeat: no-repeat; background-attachment: fixed;",
-	  	navStyle: "color: white"
+	  	navStyle: "background-color: rgba(255, 255, 255, 0.3)"
 	  })
 
 }
